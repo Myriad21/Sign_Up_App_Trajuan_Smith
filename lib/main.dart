@@ -41,6 +41,7 @@ class WelcomePage extends StatelessWidget {
       body: Center(
         child: Text(
           'Welcome, $firstName!, your account was successfully created',
+          textAlign: TextAlign.center,
           style: const TextStyle(
             fontSize: 28,
             fontWeight: FontWeight.bold,
