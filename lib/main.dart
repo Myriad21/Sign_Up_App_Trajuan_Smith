@@ -115,7 +115,6 @@ class _SignupPageState extends State<SignupPage> {
               ElevatedButton(
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
-
                     String firstName =  _nameController.text.trim().split(' ').first;
 
                     ScaffoldMessenger.of(context).showSnackBar(
