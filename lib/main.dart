@@ -110,15 +110,19 @@ class _SignupPageState extends State<SignupPage> {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
                   }
-                  if (!value.contains('@')) {
-                    return 'Please enter a valid email';
+                  final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
+                  if (!emailRegex.hasMatch(value)) {
+                    return 'Enter a valid email address';
                   }
                   return null;
-                },
+                }
               ),
               const SizedBox(height: 16),
               
               // 🔒 Password Field
+              // Uses a regex pattern to validate email format more robustly.
+              // Ensures the email contains text before and after '@' and 
+              // includes a domain.
               TextFormField(
                 controller: _passwordController,
                 obscureText: true,
